@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Barlow Condensed", "Barlow", ui-sans-serif, sans-serif;
+
+  --color-chassis: #eef0ec;
+  --color-panel: #ffffff;
+  --color-graphite: #1d2327;
+  --color-zinc: #66717a;
+  --color-line: #d8ddd8;
+  --color-petrol: #124559;
+  --color-petrol-dark: #0c3140;
+  --color-caliper: #c8382b;
+  --color-caliper-soft: #fbe9e6;
+  --color-galva: #2f7d5b;
+  --color-galva-soft: #e3f2ea;
+}
+
+html { background: var(--color-chassis); }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-graphite);
+  background: var(--color-chassis);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-petrol);
+  outline-offset: 2px;
+}
+
+@keyframes drawer-in {
+  from { transform: translateX(24px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.drawer-in { animation: drawer-in 0.18s ease-out; }
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer-in { animation: none; }
+}
